@@ -9,12 +9,22 @@
 
 int main() {
 
-	// all filenames and languages empty
+	  std::string filename;
+  std::string local_filename;
+  std::string optional_filename;
+  std::string enrty_filename;
+  std::string optional_language;
+
     {
-    	srcml_request request = { "", "", "", ""};
-    	assert(request_filename(request) == "");
-    	assert(request_language(request, "") == "");
+        srcml_request request = { "local_filename", "entry_filename", "optional_filename",\
+ "optional_language"};
+        assert(request_filename(request) == "");
+        assert(request_language(request, "") == "");
     }
 
-    return 0;
+    filename = request_filename(request);
+    assert(request_filename(request) == "local_filename");
+
+	return 0;
+	
 }
