@@ -46,6 +46,13 @@ if(request.entry_filename == "data")
           assert(request.optional_filename != "");
       }
 
+    // Testing to make sure there is a local filename if no
+    // optional_filename is given
+    if(request.optional_filename == "")
+      {
+        assert(request.local_filename != "");
+      }
+
 	return 0;
 	
 }
