@@ -52,6 +52,14 @@ if(request.entry_filename == "data")
       {
         assert(request.local_filename != "");
       }
+	
+    // A test case to make sure entry_filename is not empty
+    // if no optional language is given
+    if(request.optional_language == "")
+      {
+        assert(request.local_filename != "");
+      }
+
 
 	return 0;
 	
