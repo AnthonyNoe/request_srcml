@@ -24,6 +24,15 @@ int main() {
 
     filename = request_filename(request);
     assert(request_filename(request) == "local_filename");
+	
+    // A test case to assure that if entry_filename contains
+    //the string "data" that the local_filename is not empty
+    
+if(request.entry_filename == "data")
+      {
+        assert(request.local_filename != "");
+      }
+
 
 	return 0;
 	
