@@ -33,6 +33,18 @@ if(request.entry_filename == "data")
         assert(request.local_filename != "");
       }
 
+    // A test case to determine make sure the entry_filename
+    // is used if the file is std::cin and not a source code archive
+    // if the file does contain source-code archive then the test
+    // makes sure that the optional_filename is not empty
+    if(request.local_filename == "-")
+      {
+        if(request.entry_filename != "data")
+          assert(request.entry_filename != "");
+
+        if(request.entry_filename == "data")
+          assert(request.optional_filename != "");
+      }
 
 	return 0;
 	
