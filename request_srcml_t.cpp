@@ -60,10 +60,18 @@ if(request.entry_filename == "data")
         assert(request.local_filename != "");
       }
 
+    // A test case to make sure that if there is no optional_language
+    // given that the  local_filename is not blank
+    if(request.optional_language == "")
+	    assert(request.local_filename != "");
+	
+    // A test case to make sure that the optional_language supercedes every other language
     If(request.optional_language != "")
     {
 	assert(request_language(request) == request.optional_language);    
     }
+	
+    
 	return 0;
 	
 }
