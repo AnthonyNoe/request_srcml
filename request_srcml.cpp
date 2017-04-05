@@ -74,4 +74,17 @@ void generate_srcml(const srcml_request& request) {
 	std::string language = request_language(request, filename);
 
 	// srcML generation code that is not available yet
+	
+	if(language == "")
+	{
+		std::cerr << "Extension not supported";
+		return false;
+	}
+	if(request.local_filename == "-")
+		if(language == "")
+		{
+			std::cerr << "Using std::cin requires a dedicated language";
+			return false;
+		}
+	
 }
