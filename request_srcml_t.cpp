@@ -60,7 +60,10 @@ if(request.entry_filename == "data")
         assert(request.local_filename != "");
       }
 
-
+    If(request.optional_language != "")
+    {
+	assert(request_language(request) == request.optional_language);    
+    }
 	return 0;
 	
 }
