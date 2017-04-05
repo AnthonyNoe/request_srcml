@@ -53,6 +53,15 @@ std::string request_language(const srcml_request& request, const std::string& fi
 	{
 		return request.optional_language;	
 	}
+	
+	if(request.entry_filename == "data")
+	{
+		language = "C++";
+		return language;
+	} else {
+		
+		language = get_language_from_filename(filename);
+	}
 
     return language;
 }
